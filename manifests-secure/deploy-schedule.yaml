@@ -20,7 +20,7 @@ spec:
               key: EXTERNAL_IP_ADDR
         ports:
           - containerPort: 9080
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: keystore
           mountPath: /etc/wlp/config/keystore
@@ -28,7 +28,6 @@ spec:
           mountPath: /etc/wlp/config/truststore
         - name: liberty-config
           mountPath: /config/configDropins
-        imagePullPolicy: Never
       volumes:
       - name: keystore
         secret:
